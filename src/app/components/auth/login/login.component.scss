@@ -1,0 +1,172 @@
+:host {
+    background-color: #F2F2F2;
+    font-family: 'Roboto';
+    height: 100vh;
+    margin: 0px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p, a, button {
+    font-family: 'Roboto';
+}
+
+@mixin content-width($resolution) {
+    width: $resolution;
+    max-width: $resolution;
+}
+
+$screen-lg: 1170px;
+$screen-md: 960px;
+$screen-sm: 768px;
+$screen-xs: 480px;
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include content-width($screen-lg);
+
+    .card {
+        width: 330px;
+        background: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 8px;
+        padding: 40px 60px;
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 90%;
+    }
+}
+
+
+p.information-text {
+    font-size: 18px;
+    line-height: 21px;
+    font-weight: 400;
+    margin: 30px 0px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .form-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        label {
+            font-size: 14px;
+            line-height: 16px;
+            font-weight: 400;
+            margin-bottom: 6px;
+        }
+
+        input {
+            background: #E5E5E5;
+            border: 1px solid #CCCCCC;
+            border-radius: 8px;
+            padding: 13px 17px;
+        }
+
+        .errors {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #00aaff;
+        }
+    }
+}
+
+a {
+    display: flex;
+    justify-content: flex-end;
+    color: #3988FF;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button {
+    font-size: 18px;
+    line-height: 21px;
+    color: #ffffff;
+    background: #3988FF;
+    padding: 13px 0px;
+    border: 1px solid #3988FF;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: $screen-md) {
+    .container {
+        @include content-width($screen-md);
+    }
+}
+
+@media only screen and (max-width: $screen-sm) {
+    .container {
+        @include content-width($screen-sm);
+    }
+}
+
+@media only screen and (max-width: $screen-xs) {
+    :host {
+        background-color: #ffffff;
+        margin: 0px;
+        padding: 45px;
+
+        .logo {
+            height: 20%;
+
+            img {
+                width: 90%;
+            }
+        }
+
+        p.information-text {
+            height: 30px;
+            margin: 0px;
+        }
+
+        form {
+            height: 70%;
+            justify-content: flex-end;
+            margin-bottom: 45px;
+        }
+    }
+
+    .container {
+        width: 100%!important;
+        max-width: 100%;
+        height: 100vh;
+
+        .card {
+            width: 100%;
+            height: 100vh;
+            padding: 0px;
+            box-shadow: unset;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            
+        }
+    }
+}

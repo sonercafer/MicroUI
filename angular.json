@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
-          "strict": true
+          "strict": true,
+          "styleext": "scss"
         }
       },
       "root": "",
@@ -28,6 +29,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -124,5 +126,13 @@
       }
     }
   },
-  "defaultProject": "MicroUI"
+  "defaultProject": "MicroUI",
+  "cli": {
+    "analytics": "53d67d4d-4ecd-4337-83bd-7951455d93a6"
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

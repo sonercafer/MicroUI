@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="card">
+        <div class="logo">
+            <img src="../assets/images/logo.svg" />
+        </div>
+        <p class="information-text">{{ message }}</p>
+        <form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="email" #email="ngModel" [(ngModel)]="user.Email" placeholder="E-mail adresinizi giriniz" required /> 
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre</label>
+                <input type="password" name="password" id="password" #password="ngModel" [(ngModel)]="user.Password" placeholder="********" required />
+            </div>
+            <a routerLink="/reset-password">Şifremi unuttum</a>
+            <button type="submit">Giriş Yap</button>
+        </form>
+    </div>
+</div>

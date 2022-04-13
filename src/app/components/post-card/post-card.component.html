@@ -1,0 +1,23 @@
+<div class="row ">
+  <div class="col-5 m-1" *ngFor="let post of postList">
+    {{ post.owner.title }} {{ post.owner.firstName }}
+    {{ post.owner.lastName }}
+    <br />
+    <small>{{ post.publishDate }}</small>
+    <div class="row">
+      <div class="col-md-6">
+        <img src="{{ post.image }}" width="100%" height="200px" />
+      </div>
+      <div class="col-md-6">
+        <small>{{ post.publishDate }}</small> <br />
+        <small>{{ post.text }}</small
+        ><br />
+        <a class="btn btn-sm btn-danger m-1" *ngFor="let tag of post.tags">
+          {{ tag }}
+        </a><br>
+        <img src="/assets/images/like.svg" style="width: 1rem;"/>
+        {{post.likes}}
+      </div>
+    </div>
+  </div>
+</div>

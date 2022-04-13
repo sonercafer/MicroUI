@@ -1,0 +1,14 @@
+<div class="row">  
+        <div class="col-6" *ngFor="let user of userList">
+            <div class="card-member">
+                <div class="card-left">
+                    <img src="{{ user.picture }}" />
+                </div>
+                <div class="card-right">
+                    <p>{{ user.title }} {{ user.firstName }} {{ user.lastName }}</p>
+                    Email: dummy@dummy.com
+                    <span>Phone: 0538 555 55 55</span>
+                </div>
+            </div>
+        </div>  
+</div>
